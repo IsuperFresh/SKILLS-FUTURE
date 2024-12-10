@@ -1,0 +1,42 @@
+.custom-toast {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(147, 189, 204, 0.8);
+    color: #262629;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 20px;
+    /*font-weight: bold;*/
+    text-align: center;
+    z-index: 2000;
+    animation: fadeInOut 3s ease-in-out;
+}
+
+/* Fade-in and Fade-out animation */
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Confetti Canvas */
+.confetti {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;  /* Ensure it doesn't block UI interactions */
+    z-index: 1000;
+}
