@@ -1,9 +1,7 @@
-/**
- * Created by r.dzhus on 09.12.2024.
- */
-
-trigger ApplicationTrigger on Application__c (after update) {
-
+trigger ApplicationTrigger on Application__c (after insert, after update ) {
+    if (Trigger.isAfter && Trigger.isInsert) {
+        ApplicationTriggerHandler.handleApplicationSharing(Trigger.new);
+    }
     if (Trigger.isAfter && Trigger.isUpdate) {
         ApplicationStageChangeEvent.publishApplicationEvent(Trigger.new, Trigger.oldMap);
     }
